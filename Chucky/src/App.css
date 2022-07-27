@@ -12,15 +12,28 @@
 }
 .jokleft{
   text-align: center;
-  width: 700px;
+  width: 600px;
   height: auto;
   border: 2px solid pink;
   display: flex;
   justify-content: space-around;
 }
 .jokright{
-  width: 300px;
+  width: 600px;
   height: auto;
   border: 1px solid red;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.heat{
+  color: blue;
+}
+.heatrem{
+  color: red;
+}
+.resetJokes{
+  width: 300px;
+  height: auto;
+  border: 1px solid;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "../Components/Button/Button";
+import './LikesJokes.css'
 
 const LikesJoces = () => {
   const [jokes, setJokes] = useState([]);
@@ -18,18 +19,8 @@ const LikesJoces = () => {
       .catch((error) => {
         console.log(error);
       });
+    
   };
-
-  useEffect(() => {
-    const getStorage = localStorage.getItem("test")
-
-    return ()=> setJokes(JSON.parse(getStorage))
-  },[])
-
-  useEffect(()=>{
-    const setStorage = JSON.stringify(jokes);
-    localStorage.setItem("test",setStorage); 
-  },[jokes])
 
 
   const onDeleteJoke = (e) => {
@@ -44,11 +35,11 @@ const LikesJoces = () => {
   
 
   return (
-    <div>
+    <div className="likejokes">
      
-      <Button onClick={addJoke} value="Jokes like"/>
+      <Button onClick={addJoke} value="Jokes random"/>
       <Button onClick={resetJokes} value="Reset jokes"/>
-      <ol>
+      <ol >
         {jokes.map((el,i) => (
           <li key={i}>{el}<Button onClick={() => {onDeleteJoke(el)}} value="delete"/></li>
         ))}
